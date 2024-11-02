@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harfler İniyor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            background-color: #282c34;
+            font-family: 'Roboto', sans-serif;
+        }
+        #container {
+            display: flex;
+        }
+        .letter {
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: fall 1s forwards;
+            margin: 0 20px; /* Harfler arası boşluk */
+            font-size: 100px; /* Font boyutu */
+            background: linear-gradient(90deg, #ff007f, #7f00ff); /* Gradient renk */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation-fill-mode: forwards; /* Animasyon sonrası durumu koru */
+        }
+        @keyframes fall {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            70% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(-10px) scale(0.9); /* Yukarı ve küçülme efekti */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="letter" style="animation-delay: 0s;">W</div>
+        <div class="letter" style="animation-delay: 0.5s;">A</div>
+        <div class="letter" style="animation-delay: 1s;">X</div>
+        <div class="letter" style="animation-delay: 1.5s;">Y</div>
+    </div>
+</body>
+</html>
